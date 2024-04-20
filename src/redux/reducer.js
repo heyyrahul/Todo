@@ -1,5 +1,5 @@
-
-import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from './actions';
+// src/redux/reducer.js
+import { ADD_TODO, CLEAR_TODOS, DELETE_TODO, TOGGLE_TODO } from './actions';
 
 const initialState = {
   todos: JSON.parse(localStorage.getItem('todos')) || [],
@@ -37,7 +37,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         todos: updatedTodos,
       };
-    }
+      }
+      case CLEAR_TODOS: {
+        localStorage.setItem('todos', JSON.stringify([])); 
+        return {
+          ...state,
+          todos: [], 
+        };
+      }
     default:
       return state;
   }
