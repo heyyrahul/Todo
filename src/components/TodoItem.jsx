@@ -1,4 +1,4 @@
-// src/components/TodoItem.js
+
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, toggleTodo } from '../redux/actions';
@@ -22,7 +22,6 @@ const TodoItem = ({ todo }) => {
   };
 
   const handleSave = () => {
-    // Dispatch action to update todo text
     setEditing(false);
   };
 

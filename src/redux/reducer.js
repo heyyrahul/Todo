@@ -1,4 +1,4 @@
-// src/redux/reducer.js
+
 import { ADD_TODO, CLEAR_TODOS, DELETE_TODO, TOGGLE_TODO } from './actions';
 
 const initialState = {
