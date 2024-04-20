@@ -1,8 +1,8 @@
-
-import { ADD_TODO, CLEAR_TODOS, DELETE_TODO, TOGGLE_TODO } from './actions';
+import { ADD_TODO, CLEAR_TODOS, DELETE_TODO, SET_FILTER, TOGGLE_TODO, UPDATE_TODO_TEXT } from './actions';
 
 const initialState = {
   todos: JSON.parse(localStorage.getItem('todos')) || [],
+  filter: 'all', // Default filter
 };
 
 const reducer = (state = initialState, action) => {
@@ -37,14 +37,31 @@ const reducer = (state = initialState, action) => {
         ...state,
         todos: updatedTodos,
       };
-      }
-      case CLEAR_TODOS: {
-        localStorage.setItem('todos', JSON.stringify([])); 
-        return {
-          ...state,
-          todos: [], 
-        };
-      }
+    }
+    case CLEAR_TODOS: {
+      localStorage.setItem('todos', JSON.stringify([])); 
+      return {
+        ...state,
+        todos: [], 
+      };
+    }
+    case UPDATE_TODO_TEXT: {
+      const { id, text } = action.payload;
+      const updatedTodos = state.todos.map((todo) =>
+        todo.id === id ? { ...todo, text } : todo
+      );
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      return {
+        ...state,
+        todos: updatedTodos,
+      };
+    }
+    case SET_FILTER: {
+      return {
+        ...state,
+        filter: action.payload.filter, 
+      };
+    }
     default:
       return state;
   }

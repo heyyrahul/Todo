@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+    background-image: url('./back1.jpg');
+  }
+  
+  
+  .app {
+    text-align: center;
+  }
+  
+  .dark-mode {
+    background-image: url('./back1.jpg');
+  }
+  
+  .toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  .toggle-button {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .app-content {
+    padding: 20px;
+  }
+  
+  .light-mode {
+    background-image: url('./back1.jpg');
+  }
