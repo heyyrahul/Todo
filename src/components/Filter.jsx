@@ -11,7 +11,7 @@ const Filter = () => {
 
   return (
     <div className="filter" style={{ marginBottom: '20px', marginTop: '20px' }}>
-      <label style={{ marginRight: '10px', fontWeight: 'bold' }}>Filter:</label>
+      <label style={{ marginRight: '10px', fontWeight: 'bold', fontSize: '25px', color: 'black' }}>Filter:</label>
       <select
         onChange={handleFilterChange}
         style={{

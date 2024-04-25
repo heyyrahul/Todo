@@ -18,7 +18,7 @@ const App = () => {
           {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
       </div>
-      <h1>Todo App</h1>
+      <h1 style={{ textAlign: 'center',color: 'white' }}>Todo App</h1>
       <AddTodo />
       <Filter />
       <TodoList />
